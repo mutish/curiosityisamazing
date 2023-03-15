@@ -1,19 +1,17 @@
 from turtle import *
-
-color('cyan')
+import colorsys
 bgcolor('black')
-speed(11)
-right(45)
+speed(0)
+pensize(3)
 
-for n in range(150):
-    if 7 < n < 62:
-        left(5)
-    if 80 < n <133:
-        right(5)
-    circle(30)
-    if n < 80:
-        forward(10)
-    else:
-        forward(5)
+hue = 0.0
 
-
+for i in range(100):
+    color = colorsys.hsv_to_rgb(hue,1,1)
+    pencolor(color)
+    hue +=0.005
+    right(i)
+    circle(50,i)
+    forward(i)
+    left(91)
+done()
